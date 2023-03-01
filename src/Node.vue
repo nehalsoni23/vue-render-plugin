@@ -1,5 +1,5 @@
 <template lang="pug">
-.node(:class="[selected(), node.name] | kebab")
+.node(:class="[selected(), node.name] | kebab" v-once)
   .title {{node.name}}
 
   // Outputs
@@ -12,6 +12,7 @@
     v-for='control in controls()',
     :key="control.key",
     v-control="control"
+    v-once
   )
 
   // Inputs
